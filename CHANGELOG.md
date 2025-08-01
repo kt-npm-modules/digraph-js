@@ -1,5 +1,22 @@
 # @ktarmyshov/digraph-js
 
+## 0.2.7
+
+### Patch Changes
+
+- 263993c: dependabot: directory '/', update @types/node
+- 263993c: dependabot: directory '/', update eslint
+- 263993c: dependabot: directory '/', update typescript-eslint
+- 21e912a: dependabot: directory '/', update @types/node
+- 21e912a: dependabot: directory '/', update eslint
+- 21e912a: dependabot: directory '/', update typescript-eslint
+- 3f163db: dependabot: directory '/', update @types/node
+- 3f163db: dependabot: directory '/', update eslint-config-prettier
+- 3f163db: dependabot: directory '/', update typescript-eslint
+- 9f38aa3: dependabot: directory '/', update @types/node
+- 9f38aa3: dependabot: directory '/', update eslint
+- 9f38aa3: dependabot: directory '/', update typescript-eslint
+
 ## 0.2.6
 
 ### Patch Changes
