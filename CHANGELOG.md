@@ -1,5 +1,27 @@
 # @ktarmyshov/digraph-js
 
+## 0.3.0
+
+### Minor Changes
+
+- 6c3d692: Updated structure of Graph Dict and corresponding methods
+
+### Patch Changes
+
+- 322c6c7: dependabot: directory '/', update @types/node
+- 322c6c7: dependabot: directory '/', update eslint
+- 322c6c7: dependabot: directory '/', update typescript-eslint
+- 9951ff0: dependabot: directory '/', update @changesets/cli
+- 9951ff0: dependabot: directory '/', update @types/node
+- 9951ff0: dependabot: directory '/', update typescript-eslint
+- 83c1336: dependabot: directory '/', update @types/node
+- 83c1336: dependabot: directory '/', update eslint
+- 83c1336: dependabot: directory '/', update publint
+- 83c1336: dependabot: directory '/', update typescript-eslint
+- c1a0e35: dependabot: directory '/', update @eslint/compat
+- c1a0e35: dependabot: directory '/', update tsx
+- c1a0e35: dependabot: directory '/', update typescript-eslint
+
 ## 0.2.8
 
 ### Patch Changes
