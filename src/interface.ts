@@ -20,9 +20,13 @@ export type EdgeWithId<Edge> = [Edge] extends [never]
 			edge: Edge;
 		};
 
+// Helper type to convert never to null for JSON serialization
+type NeverToNull<T> = [T] extends [never] ? null : T;
+
+// Consistent JSON structure for directed graph
 export type DiGraphDict<Vertex = never, Edge = never> = {
-	vertices: Record<string, Vertex>;
-	edges: Record<string, Record<string, Edge>>;
+	vertices: Record<string, NeverToNull<Vertex>>;
+	edges: Record<string, Record<string, NeverToNull<Edge>>>;
 };
 
 export interface IDiGraph<Vertex, Edge> {

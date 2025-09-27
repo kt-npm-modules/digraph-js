@@ -3,30 +3,52 @@ import { DiGraphDict, EdgeId, EdgeWithId, IDiGraph, VertexWithId } from './inter
 export class DiGraph<Vertex = never, Edge = never> implements IDiGraph<Vertex, Edge> {
 	public static fromDict<Vertex, Edge>(dict: DiGraphDict<Vertex, Edge>): DiGraph<Vertex, Edge> {
 		const graph = new DiGraph<Vertex, Edge>();
-		for (const [id, vertex] of Object.entries(dict.vertices)) {
-			graph.addVertices({ id, vertex } as VertexWithId<Vertex>);
-		}
-		for (const [from, edges] of Object.entries(dict.edges)) {
-			for (const [to, edge] of Object.entries(edges)) {
-				graph.addEdges({ from, to, edge } as EdgeWithId<Edge>);
+
+		// Add vertices first
+		for (const [id, vertexBody] of Object.entries(dict.vertices)) {
+			if (vertexBody === null || vertexBody === undefined) {
+				// No vertex body
+				graph.addVertices({ id } as VertexWithId<Vertex>);
+			} else {
+				// Has vertex body
+				graph.addVertices({ id, vertex: vertexBody } as VertexWithId<Vertex>);
 			}
 		}
+
+		// Now add edges
+		for (const [from, edgesMap] of Object.entries(dict.edges)) {
+			for (const [to, edgeBody] of Object.entries(edgesMap)) {
+				if (edgeBody === null) {
+					// No edge body
+					graph.addEdges({ from, to } as EdgeWithId<Edge>);
+				} else {
+					// Has edge body
+					graph.addEdges({ from, to, edge: edgeBody } as EdgeWithId<Edge>);
+				}
+			}
+		}
+
 		return graph;
 	}
 
 	toDict(): DiGraphDict<Vertex, Edge> {
-		const vertices: Record<string, Vertex> = {};
-		const edges: Record<string, Record<string, Edge>> = {};
+		const vertices: Record<string, Vertex | null> = {};
+		const edges: Record<string, Record<string, Edge | null>> = {};
+
+		// Handle vertices - convert undefined to null for JSON serialization
 		for (const [id, vertex] of this.#vertices.entries()) {
-			vertices[id] = vertex as Vertex;
+			vertices[id] = vertex === undefined ? null : vertex;
 		}
+
+		// Handle edges - convert undefined to null for JSON serialization
 		for (const [from, edgesMap] of this.#edges.entries()) {
 			edges[from] = {};
 			for (const [to, edge] of edgesMap.entries()) {
-				edges[from][to] = edge as Edge;
+				edges[from][to] = edge === undefined ? null : edge;
 			}
 		}
-		return { vertices, edges };
+
+		return { vertices, edges } as DiGraphDict<Vertex, Edge>;
 	}
 
 	readonly #vertices: Map<string, Vertex | undefined> = new Map();

@@ -159,14 +159,14 @@ describe('Directed Graph Implementation', () => {
 						},
 						edges: {
 							a: {
-								d: undefined as never
+								d: null
 							},
 							b: {
-								d: undefined as never,
-								c: undefined as never
+								d: null,
+								c: null
 							},
 							c: {
-								a: undefined as never
+								a: null
 							}
 						}
 					};
@@ -182,10 +182,10 @@ describe('Directed Graph Implementation', () => {
 						},
 						edges: {
 							b: {
-								c: undefined as never
+								c: null
 							},
 							c: {
-								a: undefined as never
+								a: null
 							}
 						}
 					};
@@ -397,10 +397,10 @@ describe('Directed Graph Implementation', () => {
 				},
 				edges: {
 					b: {
-						a: undefined as never
+						a: null
 					},
 					c: {
-						b: undefined as never
+						b: null
 					}
 				}
 			};
