@@ -1,5 +1,26 @@
 # @ktarmyshov/digraph-js
 
+## 0.3.1
+
+### Patch Changes
+
+- 49cce6a: dependabot: directory '/', update @types/node
+- 49cce6a: dependabot: directory '/', update eslint
+- 49cce6a: dependabot: directory '/', update typescript-eslint
+- 49cce6a: dependabot: directory '/', update typescript
+- 29b34e2: dependabot: directory '/', update @types/node
+- 29b34e2: dependabot: directory '/', update publint
+- 29b34e2: dependabot: directory '/', update typescript-eslint
+- b56cd88: dependabot: directory '/', update @types/node
+- b56cd88: dependabot: directory '/', update eslint
+- b56cd88: dependabot: directory '/', update typescript-eslint
+- a323cb3: dependabot: directory '/', update @types/node
+- a323cb3: dependabot: directory '/', update @vitest/coverage-istanbul
+- a323cb3: dependabot: directory '/', update @vitest/coverage-v8
+- a323cb3: dependabot: directory '/', update publint
+- a323cb3: dependabot: directory '/', update typescript-eslint
+- a323cb3: dependabot: directory '/', update vitest
+
 ## 0.3.0
 
 ### Minor Changes
