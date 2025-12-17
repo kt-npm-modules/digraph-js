@@ -1,5 +1,22 @@
 # @ktarmyshov/digraph-js
 
+## 0.3.3
+
+### Patch Changes
+
+- 5c1fdc5: dependabot: directory '/', update @changesets/cli
+- 5c1fdc5: dependabot: directory '/', update @eslint/compat
+- 5c1fdc5: dependabot: directory '/', update @types/node
+- 5c1fdc5: dependabot: directory '/', update @vitest/coverage-istanbul
+- 5c1fdc5: dependabot: directory '/', update @vitest/coverage-v8
+- 5c1fdc5: dependabot: directory '/', update eslint
+- 5c1fdc5: dependabot: directory '/', update prettier
+- 5c1fdc5: dependabot: directory '/', update publint
+- 5c1fdc5: dependabot: directory '/', update rimraf
+- 5c1fdc5: dependabot: directory '/', update tsx
+- 5c1fdc5: dependabot: directory '/', update typescript-eslint
+- 5c1fdc5: dependabot: directory '/', update vitest
+
 ## 0.3.2
 
 ### Patch Changes
