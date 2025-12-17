@@ -48,7 +48,7 @@
 		"benchmark": "cd tests/benchmarks/webpack && tsx ./find-cycles.ts",
 		"test": "npm run check:test && vitest run && npm run benchmark",
 		"coverage": "vitest run --coverage",
-		"changeset:version": "changeset version && git add --all",
+		"changeset:version": "changeset version && npm install && git add --all",
 		"changeset:publish": "changeset publish"
 	},
 	"files": [
