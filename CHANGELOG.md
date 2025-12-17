@@ -1,5 +1,65 @@
 # @ktarmyshov/digraph-js
 
+## 0.3.2
+
+### Patch Changes
+
+- c621eb2: dependabot: directory '/', update @eslint/compat
+- c621eb2: dependabot: directory '/', update @types/node
+- c621eb2: dependabot: directory '/', update @vitest/coverage-istanbul
+- c621eb2: dependabot: directory '/', update @vitest/coverage-v8
+- c621eb2: dependabot: directory '/', update eslint
+- c621eb2: dependabot: directory '/', update rimraf
+- c621eb2: dependabot: directory '/', update vitest
+- e7c168b: dependabot: directory '/', update @vitest/coverage-istanbul
+- e7c168b: dependabot: directory '/', update @vitest/coverage-v8
+- e7c168b: dependabot: directory '/', update eslint
+- e7c168b: dependabot: directory '/', update typescript-eslint
+- e7c168b: dependabot: directory '/', update vitest
+
+## 0.3.1
+
+### Patch Changes
+
+- 49cce6a: dependabot: directory '/', update @types/node
+- 49cce6a: dependabot: directory '/', update eslint
+- 49cce6a: dependabot: directory '/', update typescript-eslint
+- 49cce6a: dependabot: directory '/', update typescript
+- 29b34e2: dependabot: directory '/', update @types/node
+- 29b34e2: dependabot: directory '/', update publint
+- 29b34e2: dependabot: directory '/', update typescript-eslint
+- b56cd88: dependabot: directory '/', update @types/node
+- b56cd88: dependabot: directory '/', update eslint
+- b56cd88: dependabot: directory '/', update typescript-eslint
+- a323cb3: dependabot: directory '/', update @types/node
+- a323cb3: dependabot: directory '/', update @vitest/coverage-istanbul
+- a323cb3: dependabot: directory '/', update @vitest/coverage-v8
+- a323cb3: dependabot: directory '/', update publint
+- a323cb3: dependabot: directory '/', update typescript-eslint
+- a323cb3: dependabot: directory '/', update vitest
+
+## 0.3.0
+
+### Minor Changes
+
+- 6c3d692: Updated structure of Graph Dict and corresponding methods
+
+### Patch Changes
+
+- 322c6c7: dependabot: directory '/', update @types/node
+- 322c6c7: dependabot: directory '/', update eslint
+- 322c6c7: dependabot: directory '/', update typescript-eslint
+- 9951ff0: dependabot: directory '/', update @changesets/cli
+- 9951ff0: dependabot: directory '/', update @types/node
+- 9951ff0: dependabot: directory '/', update typescript-eslint
+- 83c1336: dependabot: directory '/', update @types/node
+- 83c1336: dependabot: directory '/', update eslint
+- 83c1336: dependabot: directory '/', update publint
+- 83c1336: dependabot: directory '/', update typescript-eslint
+- c1a0e35: dependabot: directory '/', update @eslint/compat
+- c1a0e35: dependabot: directory '/', update tsx
+- c1a0e35: dependabot: directory '/', update typescript-eslint
+
 ## 0.2.8
 
 ### Patch Changes

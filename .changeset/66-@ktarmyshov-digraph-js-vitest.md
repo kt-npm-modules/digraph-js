@@ -2,4 +2,4 @@
 '@ktarmyshov/digraph-js': patch
 ---
 
-dependabot: directory '/', update eslint
+dependabot: directory '/', update vitest

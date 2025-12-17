@@ -1,7 +1,7 @@
 {
 	"name": "@ktarmyshov/digraph-js",
 	"description": "[yet another] A dependency free library to create and traverse directed graphs",
-	"version": "0.2.8",
+	"version": "0.3.2",
 	"license": "MIT",
 	"author": {
 		"name": "Konstantin Tarmyshov",
@@ -61,10 +61,10 @@
 	],
 	"devDependencies": {
 		"@changesets/cli": "^2.28.1",
-		"@eslint/compat": "^1.2.7",
-		"@types/node": "^24.0.1",
-		"@vitest/coverage-istanbul": "^3.1.1",
-		"@vitest/coverage-v8": "^3.1.1",
+		"@eslint/compat": "^2.0.0",
+		"@types/node": "^25.0.2",
+		"@vitest/coverage-istanbul": "^4.0.3",
+		"@vitest/coverage-v8": "^4.0.3",
 		"eslint": "^9.22.0",
 		"eslint-config-prettier": "^10.1.2",
 		"prettier": "^3.5.3",
@@ -73,7 +73,7 @@
 		"tsx": "^4.19.3",
 		"typescript": "^5.8.2",
 		"typescript-eslint": "^8.26.1",
-		"vitest": "^3.0.8"
+		"vitest": "^4.0.3"
 	},
 	"engines": {
 		"node": ">=20.0.0"
