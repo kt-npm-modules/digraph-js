@@ -1,10 +1,7 @@
 [![NPM Version](https://img.shields.io/npm/v/%40ktarmyshov%2Fdigraph-js)](https://www.npmjs.com/package/@ktarmyshov/digraph-js)
 [![CI](https://github.com/kt-npm-modules/digraph-js/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/kt-npm-modules/digraph-js/actions/workflows/ci.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=kt-npm-modules_digraph-js&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=kt-npm-modules_digraph-js)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=kt-npm-modules_digraph-js&metric=bugs)](https://sonarcloud.io/summary/new_code?id=kt-npm-modules_digraph-js)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=kt-npm-modules_digraph-js&metric=coverage)](https://sonarcloud.io/summary/new_code?id=kt-npm-modules_digraph-js)[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=kt-npm-modules_digraph-js&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=kt-npm-modules_digraph-js)
-[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=kt-npm-modules_digraph-js&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=kt-npm-modules_digraph-js)
-[![Socket Badge](https://socket.dev/api/badge/npm/package/@ktarmyshov/digraph-js)](https://socket.dev/npm/package/@ktarmyshov/digraph-js/overview)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=kt-npm-modules_digraph-js&metric=coverage)](https://sonarcloud.io/summary/new_code?id=kt-npm-modules_digraph-js)
 
 # digraph-js
 
