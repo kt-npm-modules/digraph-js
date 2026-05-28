@@ -43,7 +43,7 @@
 		"prepack": "publint",
 		"format": "prettier --write .",
 		"lint": "prettier --check . && eslint .",
-		"check": "tsc --skipLibCheck",
+		"check": "tsc --skipLibCheck --noEmit",
 		"check:test": "tsc --project tsconfig-test.json --skipLibCheck",
 		"benchmark": "cd tests/benchmarks/webpack && tsx ./find-cycles.ts",
 		"test": "npm run check:test && vitest run && npm run benchmark",

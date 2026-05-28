@@ -7,66 +7,66 @@
 
 ## 2. Migrate dependabot.yml
 
-- [ ] 2.1 Replace `.github/dependabot.yml` with the template's structure (groups: `minor-and-patch`, `major` with `group-by: dependency-name`)
-- [ ] 2.2 Keep `time:` on hour `03` and `timezone: 'Europe/Berlin'`. Pick a minute that is NOT `00` and NOT the template's `47` — keeping the existing `14` is fine; any other jittered value also works
-- [ ] 2.3 Keep the existing `ignore` rule for `npm` (`<10.0.0`, `>=11.0.0`)
-- [ ] 2.4 Keep `commit-message.prefix` and `prefix-development` set to `dependabot`
+- [x] 2.1 Replace `.github/dependabot.yml` with the template's structure (groups: `minor-and-patch`, `major` with `group-by: dependency-name`)
+- [x] 2.2 Keep `time:` on hour `03` and `timezone: 'Europe/Berlin'`. Pick a minute that is NOT `00` and NOT the template's `47` — keeping the existing `14` is fine; any other jittered value also works
+- [x] 2.3 Keep the existing `ignore` rule for `npm` (`<10.0.0`, `>=11.0.0`)
+- [x] 2.4 Keep `commit-message.prefix` and `prefix-development` set to `dependabot`
 
 ## 3. Migrate ci.yml
 
-- [ ] 3.1 Copy `../npm-typescript-template/.github/workflows/ci.yml` to `.github/workflows/ci.yml`
-- [ ] 3.2 Remove the `ci-subpackage` job entirely (no `subpackage/` exists in this repo)
-- [ ] 3.3 Remove `ci-subpackage` from the `needs:` list of `required-main` and `required-contribution`
-- [ ] 3.4 Verify `branches:` on the push trigger lists both `main` and `contribution`
-- [ ] 3.5 Keep the commented-out `echo:` debug job at the top of `jobs:`; drop any comments that referred to `ci-subpackage`
-- [ ] 3.6 Verify no `cache-additional-path:` input is passed to any `kt-workflows/actions/*` step (the template has already removed it)
-- [ ] 3.7 Verify the `test` job's `run-script` runs `npm run build && npm run coverage` and renames the output to `coverage-test-node${{ matrix.node-version }}`
-- [ ] 3.8 Confirm `digraph-js` `package.json` exposes a `coverage` script that produces `coverage-test/` output (template assumption); if it differs, adjust the `run-script` accordingly and record the deviation in design notes
+- [x] 3.1 Copy `../npm-typescript-template/.github/workflows/ci.yml` to `.github/workflows/ci.yml`
+- [x] 3.2 Remove the `ci-subpackage` job entirely (no `subpackage/` exists in this repo)
+- [x] 3.3 Remove `ci-subpackage` from the `needs:` list of `required-main` and `required-contribution`
+- [x] 3.4 Verify `branches:` on the push trigger lists both `main` and `contribution`
+- [x] 3.5 Keep the commented-out `echo:` debug job at the top of `jobs:`; drop any comments that referred to `ci-subpackage`
+- [x] 3.6 Verify no `cache-additional-path:` input is passed to any `kt-workflows/actions/*` step (the template has already removed it)
+- [x] 3.7 Verify the `test` job's `run-script` runs `npm run build && npm run coverage` and renames the output to `coverage-test-node${{ matrix.node-version }}`
+- [x] 3.8 Adapt local config to template assumption: added `reportsDirectory: './coverage-test'` to `vitest.config.ts` so `npm run coverage` writes to `coverage-test/` (matches the `mv coverage-test "${COVERAGE_DIR}"` step in the template `test` job). Also added `coverage-test` and `coverage-test-node*` to `.gitignore`. `package.json` `coverage` script is unchanged
 
 ## 4. Migrate auto-merge.yml
 
-- [ ] 4.1 Copy `../npm-typescript-template/.github/workflows/auto-merge.yml` to `.github/workflows/auto-merge.yml`
-- [ ] 4.2 Verify both `app-id`/`private-key` and `approve-app-id`/`approve-private-key` inputs are passed
-- [ ] 4.3 Verify the `if: github.event.pull_request.user.login == 'dependabot[bot]'` guard is in place
-- [ ] 4.4 Keep the commented-out `echo:` debug job
+- [x] 4.1 Copy `../npm-typescript-template/.github/workflows/auto-merge.yml` to `.github/workflows/auto-merge.yml`
+- [x] 4.2 Verify both `app-id`/`private-key` and `approve-app-id`/`approve-private-key` inputs are passed
+- [x] 4.3 Verify the `if: github.event.pull_request.user.login == 'dependabot[bot]'` guard is in place
+- [x] 4.4 Keep the commented-out `echo:` debug job
 
 ## 5. Migrate auto-release.yml
 
-- [ ] 5.1 Copy `../npm-typescript-template/.github/workflows/auto-release.yml` to `.github/workflows/auto-release.yml`
-- [ ] 5.2 Replace the repository guard `kt-npm-modules/npm-typescript-template` with `kt-npm-modules/digraph-js`
-- [ ] 5.3 Pick a cron offset distinct from the template's `09 5 1 * *` and from other repos in the org (e.g., keep the existing `23 5 1 * *` to avoid collision)
-- [ ] 5.4 Verify both pairs of app-id/private-key inputs are passed
-- [ ] 5.5 Verify `workflow_dispatch` is in the trigger list
-- [ ] 5.6 Keep the commented-out `echo:` debug job and the `# Just for testing purposes - run every 5 minutes` comment
+- [x] 5.1 Copy `../npm-typescript-template/.github/workflows/auto-release.yml` to `.github/workflows/auto-release.yml`
+- [x] 5.2 Replace the repository guard `kt-npm-modules/npm-typescript-template` with `kt-npm-modules/digraph-js`
+- [x] 5.3 Pick a cron offset distinct from the template's `09 5 1 * *` and from other repos in the org (e.g., keep the existing `23 5 1 * *` to avoid collision)
+- [x] 5.4 Verify both pairs of app-id/private-key inputs are passed
+- [x] 5.5 Verify `workflow_dispatch` is in the trigger list
+- [x] 5.6 Keep the commented-out `echo:` debug job and the `# Just for testing purposes - run every 5 minutes` comment
 
 ## 6. Migrate release.yml
 
-- [ ] 6.1 Copy `../npm-typescript-template/.github/workflows/release.yml` to `.github/workflows/release.yml`
-- [ ] 6.2 Replace the repository guard `kt-npm-modules/npm-typescript-template` with `kt-npm-modules/digraph-js`
-- [ ] 6.3 Verify the `workflow_run` trigger has `branches: [main]`
-- [ ] 6.4 Verify the guard condition is reduced to `repository`/`workflow_run.event == 'push'`/`workflow_run.conclusion == 'success'` (no `github.ref` check)
-- [ ] 6.5 Confirm the `update-pkg-lock` job is NOT present (removed in the template)
-- [ ] 6.6 Verify no `cache-additional-path:` input is passed
-- [ ] 6.7 Keep the commented-out `echo:` debug job
+- [x] 6.1 Copy `../npm-typescript-template/.github/workflows/release.yml` to `.github/workflows/release.yml`
+- [x] 6.2 Replace the repository guard `kt-npm-modules/npm-typescript-template` with `kt-npm-modules/digraph-js`
+- [x] 6.3 Verify the `workflow_run` trigger has `branches: [main]`
+- [x] 6.4 Verify the guard condition is reduced to `repository`/`workflow_run.event == 'push'`/`workflow_run.conclusion == 'success'` (no `github.ref` check)
+- [x] 6.5 Confirm the `update-pkg-lock` job is NOT present (removed in the template)
+- [x] 6.6 Verify no `cache-additional-path:` input is passed
+- [x] 6.7 Keep the commented-out `echo:` debug job
 
 ## 7. Add codeql.yml
 
-- [ ] 7.1 Copy `../npm-typescript-template/.github/workflows/codeql.yml` to `.github/workflows/codeql.yml` unchanged
-- [ ] 7.2 Verify languages list contains `actions` and `javascript-typescript`
-- [ ] 7.3 Verify the weekly cron is present
+- [x] 7.1 Copy `../npm-typescript-template/.github/workflows/codeql.yml` to `.github/workflows/codeql.yml` unchanged
+- [x] 7.2 Verify languages list contains `actions` and `javascript-typescript`
+- [x] 7.3 Verify the weekly cron is present
 
 ## 8. Add contribution-flow workflows
 
-- [ ] 8.1 Copy `../npm-typescript-template/.github/workflows/contribution-update.yml` to `.github/workflows/contribution-update.yml`
-- [ ] 8.2 Replace the repository guard with `kt-npm-modules/digraph-js`
-- [ ] 8.3 Copy `../npm-typescript-template/.github/workflows/contribution-reset.yml` to `.github/workflows/contribution-reset.yml`
-- [ ] 8.4 Replace the repository guard with `kt-npm-modules/digraph-js`
+- [x] 8.1 Copy `../npm-typescript-template/.github/workflows/contribution-update.yml` to `.github/workflows/contribution-update.yml`
+- [x] 8.2 Replace the repository guard with `kt-npm-modules/digraph-js`
+- [x] 8.3 Copy `../npm-typescript-template/.github/workflows/contribution-reset.yml` to `.github/workflows/contribution-reset.yml`
+- [x] 8.4 Replace the repository guard with `kt-npm-modules/digraph-js`
 
 ## 9. Local validation
 
-- [ ] 9.1 Run `actionlint` (or `gh actions-runner` parser) on every file under `.github/workflows/` to catch syntax errors before pushing
-- [ ] 9.2 Diff each migrated workflow against its template counterpart and confirm every difference is intentional and documented (repository slug, omitted `ci-subpackage` job in `ci.yml`, jittered cron/dependabot offsets, dropped comments referring to omitted code)
-- [ ] 9.3 Run `npm run check` and `npm run test` locally to confirm the package itself still builds (sanity check; this change does not touch package code)
+- [x] 9.1 Ran `actionlint` on every file under `.github/workflows/`. The two warnings reported (`SC1083` shellcheck literal-brace warnings on `ci.yml` line 68, and the "potentially untrusted `head.ref`" warning on `contribution-reset.yml` line 33) are present in `npm-typescript-template`'s own files identically — confirmed by running `actionlint` against the template — so they are inherited from the source, not introduced by this migration
+- [x] 9.2 Diffed each migrated workflow against its template counterpart; every difference is intentional and documented (repository slug `kt-npm-modules/digraph-js`, omitted `ci-subpackage` job in `ci.yml`, `auto-release` cron offset `23 5 1 * *`, `dependabot.yml` minute `14`)
+- [x] 9.3 Ran `npm run check`, `npm run test`, `npm run coverage` locally — all pass; `coverage-test/` directory is produced as expected by the template's CI
 
 ## 10. Push to feature branch and verify CI
 
