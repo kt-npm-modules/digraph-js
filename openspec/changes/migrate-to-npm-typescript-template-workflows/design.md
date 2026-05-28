@@ -7,6 +7,7 @@ The existing workflows already use `kt-workflows/actions/*@main` and `WORKFLOW_A
 ## Goals / Non-Goals
 
 **Goals:**
+
 - Adopt the template's overall structure and approach for `.github/workflows/*` and `.github/dependabot.yml`: same job graph, same trigger/guard patterns, same input shapes — but with documented adaptations where individual template jobs don't fit this package.
 - Drop or adapt template jobs whose preconditions don't hold here (e.g. `ci-subpackage` has no `subpackage/` to test) rather than carrying them as no-ops.
 - Preserve the comments present in the template where they still apply — including the commented-out `echo:` debug jobs at the top of each workflow — so future syncs read as targeted edits, not rewrites.
@@ -15,6 +16,7 @@ The existing workflows already use `kt-workflows/actions/*@main` and `WORKFLOW_A
 - Make the migration of repo-side configuration (branch protection, secrets, variables) explicit and reviewable in `tasks.md` rather than implied.
 
 **Non-Goals:**
+
 - No changes to runtime code, package layout, build, or test scripts.
 - No version pinning of `kt-workflows/actions/*` (the template tracks `@main`; `digraph-js` follows).
 - Not introducing the template's `subpackage/` test path — `digraph-js` has no `subpackage/`, so the `ci-subpackage` job from the template will be omitted (single localized deviation, documented in Decisions).
@@ -77,7 +79,7 @@ The template's `kt-workflows/actions/npm-ci-*` calls no longer take `cache-addit
 
 ## Risks / Trade-offs
 
-- **[Risk] Branch protection still points at old job names after merge → CI passes locally but `main` becomes unmergeable.** Mitigation: `tasks.md` includes an explicit step to update branch protection rules to `required-main (push)` and `required-main (pull_request)` *before* merging the workflow PR; verify by opening a no-op PR after the change.
+- **[Risk] Branch protection still points at old job names after merge → CI passes locally but `main` becomes unmergeable.** Mitigation: `tasks.md` includes an explicit step to update branch protection rules to `required-main (push)` and `required-main (pull_request)` _before_ merging the workflow PR; verify by opening a no-op PR after the change.
 - **[Risk] `APPROVE_APP_*` secrets missing → auto-merge / auto-release fail at the approve step.** Mitigation: pre-merge checklist item to confirm secrets are configured; if absent, the secrets must be added before the first Dependabot run after merge.
 - **[Risk] First push to `main` after merge triggers `contribution-update.yml`, which force-creates/updates a `contribution` branch.** Mitigation: this is by design and matches the template; document in tasks that the new `contribution` branch should also be added to branch protection (with `required-contribution` checks) once it exists.
 - **[Risk] CodeQL on the `actions` language flags one of our existing custom workflows.** Mitigation: the template runs the same CodeQL config in production already, so this is bounded; treat any findings as an actionable follow-up, not a blocker for the migration.
