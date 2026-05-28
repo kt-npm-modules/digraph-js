@@ -1,4 +1,4 @@
-import { DiGraphDict, EdgeId, EdgeWithId, IDiGraph, VertexWithId } from './interface';
+import { DiGraphDict, EdgeId, EdgeWithId, IDiGraph, VertexWithId } from './interface.js';
 
 export class DiGraph<Vertex = never, Edge = never> implements IDiGraph<Vertex, Edge> {
 	public static fromDict<Vertex, Edge>(dict: DiGraphDict<Vertex, Edge>): DiGraph<Vertex, Edge> {

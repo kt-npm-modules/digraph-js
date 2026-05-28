@@ -1,5 +1,5 @@
 import { describe, it } from 'vitest';
-import { DiGraph, GraphPaths, VertexWithId } from '../src/index';
+import { DiGraph, GraphPaths, VertexWithId } from '../src/index.js';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Vertex = Record<string, any>;

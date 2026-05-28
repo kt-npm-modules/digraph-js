@@ -1,4 +1,4 @@
-import { IDiGraph } from './interface';
+import { IDiGraph } from './interface.js';
 
 export class GraphPaths<Vertex, Edge> {
 	constructor(public readonly graph: IDiGraph<Vertex, Edge>) {}

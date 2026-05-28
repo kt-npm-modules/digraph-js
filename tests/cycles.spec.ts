@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { CyclesDFS, CyclesJohnson, DiGraph, DiGraphDict, VertexWithId } from '../src/index';
+import { CyclesDFS, CyclesJohnson, DiGraph, DiGraphDict, VertexWithId } from '../src/index.js';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Vertex = Record<string, any>;
