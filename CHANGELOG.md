@@ -1,5 +1,27 @@
 # @ktarmyshov/digraph-js
 
+## 1.0.0
+
+### Major Changes
+
+- e4e3d08: build: migrate `tsconfig.json` to `module: "nodenext"` / `moduleResolution: "nodenext"` (split into `tsconfig.base.json` + per-target overlays), bump TypeScript `lib` to `es2024` + `ESNext.{Array,Collection,Iterator}`, and raise minimum supported Node.js to `>=22.0.0` (Node 20 reached EOL). First stable 1.0 release. Internal: relative imports in `src/` and `tests/` now require explicit `.js` extensions. No public API surface changes.
+
+### Patch Changes
+
+- 67a7f70: build: bump `eslint` and `@eslint/js` to v10. ESLint v10 no longer bundles `@eslint/js` or `globals`, so they are now declared explicitly as devDependencies.
+- ccb9b79: dependabot: directory '/', update @changesets/cli
+- ccb9b79: dependabot: directory '/', update @eslint/compat
+- ccb9b79: dependabot: directory '/', update @types/node
+- ccb9b79: dependabot: directory '/', update @vitest/coverage-istanbul
+- ccb9b79: dependabot: directory '/', update @vitest/coverage-v8
+- ccb9b79: dependabot: directory '/', update prettier
+- ccb9b79: dependabot: directory '/', update publint
+- ccb9b79: dependabot: directory '/', update rimraf
+- ccb9b79: dependabot: directory '/', update tsx
+- ccb9b79: dependabot: directory '/', update typescript-eslint
+- ccb9b79: dependabot: directory '/', update vitest
+- ccb9b79: dependabot: directory '/', update typescript
+
 ## 0.3.6
 
 ### Patch Changes
