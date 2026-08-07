@@ -1,5 +1,13 @@
 # @ktarmyshov/digraph-js
 
+## 1.0.4
+
+### Patch Changes
+
+- d6f8015: dependabot: directory '/', update globals
+- d6f8015: dependabot: directory '/', update tsx
+- d6f8015: dependabot: directory '/', update typescript-eslint
+
 ## 1.0.3
 
 ### Patch Changes
