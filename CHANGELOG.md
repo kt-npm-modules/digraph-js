@@ -1,5 +1,15 @@
 # @ktarmyshov/digraph-js
 
+## 1.0.6
+
+### Patch Changes
+
+- 1f255ea: dependabot: dependency updates for PR #120
+- 72a1dc7: dependabot: dependency updates for PR #122
+- 898543b: dependabot: dependency updates for PR #123
+- e2a947e: dependabot: dependency updates for PR #124
+- 34a2598: dependabot: dependency updates for PR #125
+
 ## 1.0.5
 
 ### Patch Changes
